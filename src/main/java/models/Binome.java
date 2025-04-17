@@ -9,17 +9,17 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Binome {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "etud1", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "etud1", referencedColumnName = "id", nullable = false)
     private Etudiant etud1;
 
-    @ManyToOne
-    @JoinColumn(name = "etud2", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "etud2", referencedColumnName = "id", nullable = false)
     private Etudiant etud2;
 
     @Column(name = "moyenneBinome", precision = 5, scale = 2)
