@@ -26,4 +26,6 @@ public class Etudiant {
 
     @Column(name = "filiere", nullable = false)
     private String filiere;
+    @Column(name = "groupe", nullable = false)
+    private String groupe;
 }
